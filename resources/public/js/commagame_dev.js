@@ -32155,11 +32155,17 @@ goog.style.getCssTranslation = function(element) {
 goog.provide("alex_comma_game.game");
 goog.require("cljs.core");
 alex_comma_game.game.category = cljs.core.list(new cljs.core.Keyword(null, "id", "id", 1013907597), new cljs.core.Keyword(null, "name", "name", 1017277949));
-alex_comma_game.game.categories = cljs.core.list.call(null, cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(1, "Brushstrokes")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(2, "Rules 1, 2, 3")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(3, "Rules 4, 5, 6")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(4, "Rules 7, 8, 9")), cljs.core.zipmap.call(null, alex_comma_game.game.category, 
-cljs.core.list(5, "Lists")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(6, "Oddballs")));
+alex_comma_game.game.categories = cljs.core.list.call(null, cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(1, "A comma is used to set off a word that introduces a sentence such as yes, no, and well.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(2, "A comma belongs before the conjunction and, or, or but in a compond sentence.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(3, "Use commas to separate three or more words in a series.  Do not use a comma after the last word in the series.")), 
+cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(4, "Use commas to separate three or more phrases in a series.  Do not use a comma after the last phrase in the sentence.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(5, "Use a comma after a greeting and after the closing of a friendly letter.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(6, "A comma sets off a person's name when the person is being directly spoken to.")), 
+cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(7, "Use a comma between the day and the year in a date.  Do not use a comma if only the month and year are given.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(8, "Use a comma between the names of a city and a state.")), cljs.core.zipmap.call(null, alex_comma_game.game.category, cljs.core.list(9, "Use a comma to set off a direct quotation.")));
 alex_comma_game.game.sentence = cljs.core.list(new cljs.core.Keyword(null, "text", "text", 1017460895), new cljs.core.Keyword(null, "answer", "answer", 3896062768));
-alex_comma_game.game.sentences = cljs.core.list.call(null, cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Sentence 1 (3)", 3)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Sentence 2 (6)", 6)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Sentence 3 (2)", 2)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Sentence 4 (1)", 1)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, 
-cljs.core.list("Sentence 5 (4)", 4)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Sentence 6 (5)", 5)));
+alex_comma_game.game.sentences = cljs.core.list.call(null, cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Yes, my teacher is Mrs. McLaughlin.", 1)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Well, I think tomorrow I will feel better.", 1)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("No, I'm 10 not 9.", 1)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("I walk to the store, and brought all the groceries. (Check this sentence.)", 
+2)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("I have my bike, but I don't ride it much.", 2)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Can I ride my bike, or do I ride with you?", 2)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("I once played soccer, basketball, and football.", 3)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("I went to a restaurant and ordered chicken, cookies, and chips and dip.", 
+3)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("My favorite candies are Snickers, Twix, and M\x26Ms.", 3)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("When I got home I changed by clothes, washed my hands, and fed my dogs.", 4)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("To make mashed potatoes you peel the potatoes, put in a bowl, put in seasoning, and mash the potatoes.", 4)), cljs.core.zipmap.call(null, 
+alex_comma_game.game.sentence, cljs.core.list("Dear Stacy,\x3cbr/\x3eI hope you have a great birthday.  40 is not old.\x3cbr/\x3eYour friend,\x3cbr/\x3eAlexandra", 5)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Bob, you need to clean your room.", 6)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("My teacher, Mrs. McLaughlin, teaches fifth grade.", 6)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Tanner, I have a surprise for you.", 
+6)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("August 26, 2013", 7)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("December 25, 2013", 7)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("August 6, 2013", 7)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("February 11, 2013", 7)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Flower Mound, TX", 8)), cljs.core.zipmap.call(null, 
+alex_comma_game.game.sentence, cljs.core.list("Oklahoma City, OK", 8)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Houston, TX", 8)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list("Norman, OK", 8)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list('Mrs. McLaughlin said, "Stop Talking."', 9)), cljs.core.zipmap.call(null, alex_comma_game.game.sentence, cljs.core.list('Mom said, "It\'s dinner time."', 9)), cljs.core.zipmap.call(null, 
+alex_comma_game.game.sentence, cljs.core.list('I said, "What are we having for dinner?"', 9)));
 goog.provide("goog.dom.xml");
 goog.require("goog.dom");
 goog.require("goog.dom.NodeType");
@@ -34936,41 +34942,116 @@ goog.require("domina.events");
 goog.require("hiccups.runtime");
 goog.require("domina");
 alex_comma_game.layout.category_count = cljs.core.count.call(null, alex_comma_game.game.categories);
-alex_comma_game.layout.window_size = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "width", "width", 1127031096), window.innerWidth, new cljs.core.Keyword(null, "height", "height", 4087841945), window.innerHeight], true);
-alex_comma_game.layout.category_width = 300;
-alex_comma_game.layout.center_of_window = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "x", "x", 1013904362), cljs.core.quot.call(null, (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, alex_comma_game.layout.window_size), 2), new cljs.core.Keyword(null, "y", "y", 1013904363), cljs.core.quot.call(null, (new cljs.core.Keyword(null, "height", "height", 4087841945)).call(null, alex_comma_game.layout.window_size), 2)], true);
-alex_comma_game.layout.limiting_size = function() {
-  var x__3125__auto__ = (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, alex_comma_game.layout.window_size);
-  var y__3126__auto__ = (new cljs.core.Keyword(null, "height", "height", 4087841945)).call(null, alex_comma_game.layout.window_size);
-  return x__3125__auto__ < y__3126__auto__ ? x__3125__auto__ : y__3126__auto__
-}();
-alex_comma_game.layout.radius_of_circle = cljs.core.quot.call(null, alex_comma_game.layout.limiting_size * 3, 8);
+alex_comma_game.layout.window_size = function window_size() {
+  return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "width", "width", 1127031096), window.innerWidth, new cljs.core.Keyword(null, "height", "height", 4087841945), window.innerHeight], true)
+};
+alex_comma_game.layout.using_window_size = function using_window_size(f) {
+  var sz = alex_comma_game.layout.window_size.call(null);
+  return f.call(null, sz)
+};
+alex_comma_game.layout.category_width = function category_width() {
+  return alex_comma_game.layout.using_window_size.call(null, function(sz) {
+    return cljs.core.quot.call(null, (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, sz), 6)
+  })
+};
+alex_comma_game.layout.sentence_width = function sentence_width() {
+  return alex_comma_game.layout.using_window_size.call(null, function(sz) {
+    return cljs.core.quot.call(null, (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, sz), 4)
+  })
+};
+alex_comma_game.layout.center_of_window = function center_of_window() {
+  return alex_comma_game.layout.using_window_size.call(null, function(sz) {
+    return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "x", "x", 1013904362), cljs.core.quot.call(null, (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, sz), 2), new cljs.core.Keyword(null, "y", "y", 1013904363), cljs.core.quot.call(null, (new cljs.core.Keyword(null, "height", "height", 4087841945)).call(null, sz), 2)], true)
+  })
+};
+alex_comma_game.layout.limiting_size = function limiting_size() {
+  return alex_comma_game.layout.using_window_size.call(null, function(sz) {
+    var x__3125__auto__ = (new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, sz);
+    var y__3126__auto__ = (new cljs.core.Keyword(null, "height", "height", 4087841945)).call(null, sz);
+    return x__3125__auto__ < y__3126__auto__ ? x__3125__auto__ : y__3126__auto__
+  })
+};
+alex_comma_game.layout.radius_of_circle = function radius_of_circle() {
+  return cljs.core.quot.call(null, alex_comma_game.layout.limiting_size.call(null) * 3, 8)
+};
 alex_comma_game.layout.angle_of_category = function angle_of_category(n) {
   return(n - 1) * (2 * Math.PI / alex_comma_game.layout.category_count)
 };
 alex_comma_game.layout.in_px = function in_px(v) {
   return[cljs.core.str(v), cljs.core.str("px")].join("")
 };
-alex_comma_game.layout.category_style = function category_style(n) {
+alex_comma_game.layout.category_style = function category_style(n, cat_dom) {
   var angle = alex_comma_game.layout.angle_of_category.call(null, n);
   var sin = Math.sin.call(null, angle);
   var cos = Math.cos.call(null, angle);
-  var x_offset = sin * alex_comma_game.layout.radius_of_circle | 0;
-  var y_offset = cos * alex_comma_game.layout.radius_of_circle | 0;
-  var x = (new cljs.core.Keyword(null, "x", "x", 1013904362)).call(null, alex_comma_game.layout.center_of_window) + x_offset - cljs.core.quot.call(null, alex_comma_game.layout.category_width, 2);
-  var y = (new cljs.core.Keyword(null, "y", "y", 1013904363)).call(null, alex_comma_game.layout.center_of_window) + y_offset;
-  return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "left", "left", 1017222009), alex_comma_game.layout.in_px.call(null, x), new cljs.core.Keyword(null, "top", "top", 1014019271), alex_comma_game.layout.in_px.call(null, y), new cljs.core.Keyword(null, "width", "width", 1127031096), alex_comma_game.layout.in_px.call(null, alex_comma_game.layout.category_width), new cljs.core.Keyword(null, "position", "position", 1761709211), "absolute"], true)
-};
-alex_comma_game.layout.update_size_status = function update_size_status(evt) {
-  var t = domina.by_id.call(null, "first");
-  return domina.set_text_BANG_.call(null, t, [cljs.core.str((new cljs.core.Keyword(null, "width", "width", 1127031096)).call(null, alex_comma_game.layout.window_size)), cljs.core.str(" x "), cljs.core.str((new cljs.core.Keyword(null, "height", "height", 4087841945)).call(null, alex_comma_game.layout.window_size))].join(""))
+  var r = alex_comma_game.layout.radius_of_circle.call(null);
+  var center = alex_comma_game.layout.center_of_window.call(null);
+  var cat_width = alex_comma_game.layout.category_width.call(null);
+  var cat_height = cat_dom.offsetHeight;
+  var x_offset = sin * r | 0;
+  var y_offset = cos * r | 0;
+  var x = (new cljs.core.Keyword(null, "x", "x", 1013904362)).call(null, center) + x_offset - cljs.core.quot.call(null, cat_width, 2);
+  var y = (new cljs.core.Keyword(null, "y", "y", 1013904363)).call(null, center) + y_offset - cljs.core.quot.call(null, cat_height, 2);
+  return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "left", "left", 1017222009), alex_comma_game.layout.in_px.call(null, x), new cljs.core.Keyword(null, "top", "top", 1014019271), alex_comma_game.layout.in_px.call(null, y), new cljs.core.Keyword(null, "width", "width", 1127031096), alex_comma_game.layout.in_px.call(null, cat_width)], true)
 };
 alex_comma_game.layout.category_id = function category_id(n) {
   return[cljs.core.str("category"), cljs.core.str(n)].join("")
 };
 alex_comma_game.layout.category_div = function category_div(n, name) {
-  return[cljs.core.str("\x3cdiv"), cljs.core.str(hiccups.runtime.render_attr_map.call(null, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "id", "id", 1013907597), alex_comma_game.layout.category_id.call(null, n), new cljs.core.Keyword(null, "class", "class", 1108647146), "category"], true))), cljs.core.str("\x3e"), cljs.core.str(hiccups.runtime.render_html.call(null, name)), cljs.core.str("\x3c/div\x3e")].join("")
+  return[cljs.core.str("\x3cdiv"), cljs.core.str(hiccups.runtime.render_attr_map.call(null, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "id", "id", 1013907597), alex_comma_game.layout.category_id.call(null, n), new cljs.core.Keyword(null, "class", "class", 1108647146), "category normal"], true))), cljs.core.str("\x3e"), cljs.core.str(hiccups.runtime.render_html.call(null, name)), cljs.core.str("\x3c/div\x3e")].join("")
 };
+alex_comma_game.layout.sentence_atom = cljs.core.atom.call(null, cljs.core.shuffle.call(null, alex_comma_game.game.sentences));
+alex_comma_game.layout.current_sentence = function current_sentence() {
+  return cljs.core.first.call(null, cljs.core.deref.call(null, alex_comma_game.layout.sentence_atom))
+};
+alex_comma_game.layout.iterate_sentences = function iterate_sentences() {
+  return cljs.core.swap_BANG_.call(null, alex_comma_game.layout.sentence_atom, cljs.core.rest)
+};
+alex_comma_game.layout.sentence_style = function sentence_style(sen_div) {
+  var center = alex_comma_game.layout.center_of_window.call(null);
+  var sen_width = alex_comma_game.layout.sentence_width.call(null);
+  var sen_height = sen_div.offsetHeight;
+  var x = (new cljs.core.Keyword(null, "x", "x", 1013904362)).call(null, center) - cljs.core.quot.call(null, sen_width, 2);
+  var y = (new cljs.core.Keyword(null, "y", "y", 1013904363)).call(null, center) - cljs.core.quot.call(null, sen_height, 2);
+  return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "left", "left", 1017222009), alex_comma_game.layout.in_px.call(null, x), new cljs.core.Keyword(null, "top", "top", 1014019271), alex_comma_game.layout.in_px.call(null, y), new cljs.core.Keyword(null, "width", "width", 1127031096), alex_comma_game.layout.in_px.call(null, sen_width)], true)
+};
+alex_comma_game.layout.update_sentence = function update_sentence() {
+  var map__53935 = alex_comma_game.layout.current_sentence.call(null);
+  var map__53935__$1 = cljs.core.seq_QMARK_.call(null, map__53935) ? cljs.core.apply.call(null, cljs.core.hash_map, map__53935) : map__53935;
+  var answer = cljs.core.get.call(null, map__53935__$1, new cljs.core.Keyword(null, "answer", "answer", 3896062768));
+  var text = cljs.core.get.call(null, map__53935__$1, new cljs.core.Keyword(null, "text", "text", 1017460895));
+  var sen_div = domina.by_id.call(null, "sentence");
+  domina.set_html_BANG_.call(null, sen_div, text);
+  domina.set_data_BANG_.call(null, sen_div, new cljs.core.Keyword(null, "answer", "answer", 3896062768), answer);
+  return domina.set_styles_BANG_.call(null, sen_div, alex_comma_game.layout.sentence_style.call(null, sen_div))
+};
+alex_comma_game.layout.correct_answer_QMARK_ = function correct_answer_QMARK_(cat_div) {
+  var cat_answer = domina.get_data.call(null, cat_div, new cljs.core.Keyword(null, "answer", "answer", 3896062768));
+  var sen_answer = domina.get_data.call(null, domina.by_id.call(null, "sentence"), new cljs.core.Keyword(null, "answer", "answer", 3896062768));
+  return cljs.core._EQ_.call(null, cat_answer, sen_answer)
+};
+alex_comma_game.layout.with_event_target = function with_event_target(evt, f) {
+  var target = domina.events.current_target.call(null, evt);
+  domina.events.stop_propagation.call(null, evt);
+  return f.call(null, target)
+};
+alex_comma_game.layout.category_mouse_over = function category_mouse_over(evt) {
+  return alex_comma_game.layout.with_event_target.call(null, evt, function(p1__53936_SHARP_) {
+    return domina.toggle_class_BANG_.call(null, p1__53936_SHARP_, "mouseover")
+  })
+};
+alex_comma_game.layout.category_mouse_out = function category_mouse_out(evt) {
+  return alex_comma_game.layout.with_event_target.call(null, evt, function(p1__53937_SHARP_) {
+    return domina.toggle_class_BANG_.call(null, p1__53937_SHARP_, "mouseover")
+  })
+};
+alex_comma_game.layout.category_click = function category_click(evt) {
+  return alex_comma_game.layout.with_event_target.call(null, evt, function(p1__53938_SHARP_) {
+    return domina.add_class_BANG_.call(null, p1__53938_SHARP_, "correct")
+  })
+};
+alex_comma_game.layout.category_events = cljs.core.list.call(null, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "event", "event", 1110795788), new cljs.core.Keyword(null, "mouseover", "mouseover", 1601081963), new cljs.core.Keyword(null, "handler", "handler", 1706707644), alex_comma_game.layout.category_mouse_over], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "event", "event", 1110795788), new cljs.core.Keyword(null, "mouseout", "mouseout", 894298107), 
+new cljs.core.Keyword(null, "handler", "handler", 1706707644), alex_comma_game.layout.category_mouse_out], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "event", "event", 1110795788), new cljs.core.Keyword(null, "click", "click", 1108654330), new cljs.core.Keyword(null, "handler", "handler", 1706707644), alex_comma_game.layout.category_click], true));
 alex_comma_game.layout.init = function init() {
   if(cljs.core.truth_(function() {
     var and__3941__auto__ = document;
@@ -34980,75 +35061,133 @@ alex_comma_game.layout.init = function init() {
       return and__3941__auto__
     }
   }())) {
-    var cat_map = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.map.call(null, function(p__34906) {
-      var map__34907 = p__34906;
-      var map__34907__$1 = cljs.core.seq_QMARK_.call(null, map__34907) ? cljs.core.apply.call(null, cljs.core.hash_map, map__34907) : map__34907;
-      var name = cljs.core.get.call(null, map__34907__$1, new cljs.core.Keyword(null, "name", "name", 1017277949));
-      var id = cljs.core.get.call(null, map__34907__$1, new cljs.core.Keyword(null, "id", "id", 1013907597));
+    var cat_map = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.map.call(null, function(p__53953) {
+      var map__53954 = p__53953;
+      var map__53954__$1 = cljs.core.seq_QMARK_.call(null, map__53954) ? cljs.core.apply.call(null, cljs.core.hash_map, map__53954) : map__53954;
+      var name = cljs.core.get.call(null, map__53954__$1, new cljs.core.Keyword(null, "name", "name", 1017277949));
+      var id = cljs.core.get.call(null, map__53954__$1, new cljs.core.Keyword(null, "id", "id", 1013907597));
       return cljs.core.PersistentVector.fromArray([id, alex_comma_game.layout.category_div.call(null, id, name)], true)
     }, alex_comma_game.game.categories));
     var body = domina.xpath.xpath.call(null, "//body");
-    var seq__34908 = cljs.core.seq.call(null, cat_map);
-    var chunk__34909 = null;
-    var count__34910 = 0;
-    var i__34911 = 0;
+    var seq__53955_53967 = cljs.core.seq.call(null, cat_map);
+    var chunk__53956_53968 = null;
+    var count__53957_53969 = 0;
+    var i__53958_53970 = 0;
     while(true) {
-      if(i__34911 < count__34910) {
-        var vec__34912 = cljs.core._nth.call(null, chunk__34909, i__34911);
-        var n = cljs.core.nth.call(null, vec__34912, 0, null);
-        var cat_div = cljs.core.nth.call(null, vec__34912, 1, null);
-        domina.append_BANG_.call(null, body, cat_div);
-        var cat_style_34914 = alex_comma_game.layout.category_style.call(null, n);
-        var cat_dom_34915 = domina.by_id.call(null, alex_comma_game.layout.category_id.call(null, n));
-        domina.set_styles_BANG_.call(null, cat_dom_34915, cat_style_34914);
-        var G__34916 = seq__34908;
-        var G__34917 = chunk__34909;
-        var G__34918 = count__34910;
-        var G__34919 = i__34911 + 1;
-        seq__34908 = G__34916;
-        chunk__34909 = G__34917;
-        count__34910 = G__34918;
-        i__34911 = G__34919;
+      if(i__53958_53970 < count__53957_53969) {
+        var vec__53959_53971 = cljs.core._nth.call(null, chunk__53956_53968, i__53958_53970);
+        var n_53972 = cljs.core.nth.call(null, vec__53959_53971, 0, null);
+        var cat_div_53973 = cljs.core.nth.call(null, vec__53959_53971, 1, null);
+        domina.append_BANG_.call(null, body, cat_div_53973);
+        var cat_dom_53974 = domina.by_id.call(null, alex_comma_game.layout.category_id.call(null, n_53972));
+        var cat_style_53975 = alex_comma_game.layout.category_style.call(null, n_53972, cat_dom_53974);
+        domina.set_styles_BANG_.call(null, cat_dom_53974, cat_style_53975);
+        domina.set_data_BANG_.call(null, cat_dom_53974, new cljs.core.Keyword(null, "answer", "answer", 3896062768), n_53972);
+        var G__53976 = seq__53955_53967;
+        var G__53977 = chunk__53956_53968;
+        var G__53978 = count__53957_53969;
+        var G__53979 = i__53958_53970 + 1;
+        seq__53955_53967 = G__53976;
+        chunk__53956_53968 = G__53977;
+        count__53957_53969 = G__53978;
+        i__53958_53970 = G__53979;
         continue
       }else {
-        var temp__4092__auto__ = cljs.core.seq.call(null, seq__34908);
-        if(temp__4092__auto__) {
-          var seq__34908__$1 = temp__4092__auto__;
-          if(cljs.core.chunked_seq_QMARK_.call(null, seq__34908__$1)) {
-            var c__3527__auto__ = cljs.core.chunk_first.call(null, seq__34908__$1);
-            var G__34920 = cljs.core.chunk_rest.call(null, seq__34908__$1);
-            var G__34921 = c__3527__auto__;
-            var G__34922 = cljs.core.count.call(null, c__3527__auto__);
-            var G__34923 = 0;
-            seq__34908 = G__34920;
-            chunk__34909 = G__34921;
-            count__34910 = G__34922;
-            i__34911 = G__34923;
+        var temp__4092__auto___53980 = cljs.core.seq.call(null, seq__53955_53967);
+        if(temp__4092__auto___53980) {
+          var seq__53955_53981__$1 = temp__4092__auto___53980;
+          if(cljs.core.chunked_seq_QMARK_.call(null, seq__53955_53981__$1)) {
+            var c__3527__auto___53982 = cljs.core.chunk_first.call(null, seq__53955_53981__$1);
+            var G__53983 = cljs.core.chunk_rest.call(null, seq__53955_53981__$1);
+            var G__53984 = c__3527__auto___53982;
+            var G__53985 = cljs.core.count.call(null, c__3527__auto___53982);
+            var G__53986 = 0;
+            seq__53955_53967 = G__53983;
+            chunk__53956_53968 = G__53984;
+            count__53957_53969 = G__53985;
+            i__53958_53970 = G__53986;
             continue
           }else {
-            var vec__34913 = cljs.core.first.call(null, seq__34908__$1);
-            var n = cljs.core.nth.call(null, vec__34913, 0, null);
-            var cat_div = cljs.core.nth.call(null, vec__34913, 1, null);
-            domina.append_BANG_.call(null, body, cat_div);
-            var cat_style_34924 = alex_comma_game.layout.category_style.call(null, n);
-            var cat_dom_34925 = domina.by_id.call(null, alex_comma_game.layout.category_id.call(null, n));
-            domina.set_styles_BANG_.call(null, cat_dom_34925, cat_style_34924);
-            var G__34926 = cljs.core.next.call(null, seq__34908__$1);
-            var G__34927 = null;
-            var G__34928 = 0;
-            var G__34929 = 0;
-            seq__34908 = G__34926;
-            chunk__34909 = G__34927;
-            count__34910 = G__34928;
-            i__34911 = G__34929;
+            var vec__53960_53987 = cljs.core.first.call(null, seq__53955_53981__$1);
+            var n_53988 = cljs.core.nth.call(null, vec__53960_53987, 0, null);
+            var cat_div_53989 = cljs.core.nth.call(null, vec__53960_53987, 1, null);
+            domina.append_BANG_.call(null, body, cat_div_53989);
+            var cat_dom_53990 = domina.by_id.call(null, alex_comma_game.layout.category_id.call(null, n_53988));
+            var cat_style_53991 = alex_comma_game.layout.category_style.call(null, n_53988, cat_dom_53990);
+            domina.set_styles_BANG_.call(null, cat_dom_53990, cat_style_53991);
+            domina.set_data_BANG_.call(null, cat_dom_53990, new cljs.core.Keyword(null, "answer", "answer", 3896062768), n_53988);
+            var G__53992 = cljs.core.next.call(null, seq__53955_53981__$1);
+            var G__53993 = null;
+            var G__53994 = 0;
+            var G__53995 = 0;
+            seq__53955_53967 = G__53992;
+            chunk__53956_53968 = G__53993;
+            count__53957_53969 = G__53994;
+            i__53958_53970 = G__53995;
             continue
           }
         }else {
-          return null
         }
       }
       break
     }
+    var seq__53961_53996 = cljs.core.seq.call(null, alex_comma_game.layout.category_events);
+    var chunk__53962_53997 = null;
+    var count__53963_53998 = 0;
+    var i__53964_53999 = 0;
+    while(true) {
+      if(i__53964_53999 < count__53963_53998) {
+        var map__53965_54000 = cljs.core._nth.call(null, chunk__53962_53997, i__53964_53999);
+        var map__53965_54001__$1 = cljs.core.seq_QMARK_.call(null, map__53965_54000) ? cljs.core.apply.call(null, cljs.core.hash_map, map__53965_54000) : map__53965_54000;
+        var handler_54002 = cljs.core.get.call(null, map__53965_54001__$1, new cljs.core.Keyword(null, "handler", "handler", 1706707644));
+        var event_54003 = cljs.core.get.call(null, map__53965_54001__$1, new cljs.core.Keyword(null, "event", "event", 1110795788));
+        domina.events.listen_BANG_.call(null, domina.by_class.call(null, "category"), event_54003, handler_54002);
+        var G__54004 = seq__53961_53996;
+        var G__54005 = chunk__53962_53997;
+        var G__54006 = count__53963_53998;
+        var G__54007 = i__53964_53999 + 1;
+        seq__53961_53996 = G__54004;
+        chunk__53962_53997 = G__54005;
+        count__53963_53998 = G__54006;
+        i__53964_53999 = G__54007;
+        continue
+      }else {
+        var temp__4092__auto___54008 = cljs.core.seq.call(null, seq__53961_53996);
+        if(temp__4092__auto___54008) {
+          var seq__53961_54009__$1 = temp__4092__auto___54008;
+          if(cljs.core.chunked_seq_QMARK_.call(null, seq__53961_54009__$1)) {
+            var c__3527__auto___54010 = cljs.core.chunk_first.call(null, seq__53961_54009__$1);
+            var G__54011 = cljs.core.chunk_rest.call(null, seq__53961_54009__$1);
+            var G__54012 = c__3527__auto___54010;
+            var G__54013 = cljs.core.count.call(null, c__3527__auto___54010);
+            var G__54014 = 0;
+            seq__53961_53996 = G__54011;
+            chunk__53962_53997 = G__54012;
+            count__53963_53998 = G__54013;
+            i__53964_53999 = G__54014;
+            continue
+          }else {
+            var map__53966_54015 = cljs.core.first.call(null, seq__53961_54009__$1);
+            var map__53966_54016__$1 = cljs.core.seq_QMARK_.call(null, map__53966_54015) ? cljs.core.apply.call(null, cljs.core.hash_map, map__53966_54015) : map__53966_54015;
+            var handler_54017 = cljs.core.get.call(null, map__53966_54016__$1, new cljs.core.Keyword(null, "handler", "handler", 1706707644));
+            var event_54018 = cljs.core.get.call(null, map__53966_54016__$1, new cljs.core.Keyword(null, "event", "event", 1110795788));
+            domina.events.listen_BANG_.call(null, domina.by_class.call(null, "category"), event_54018, handler_54017);
+            var G__54019 = cljs.core.next.call(null, seq__53961_54009__$1);
+            var G__54020 = null;
+            var G__54021 = 0;
+            var G__54022 = 0;
+            seq__53961_53996 = G__54019;
+            chunk__53962_53997 = G__54020;
+            count__53963_53998 = G__54021;
+            i__53964_53999 = G__54022;
+            continue
+          }
+        }else {
+        }
+      }
+      break
+    }
+    return alex_comma_game.layout.update_sentence.call(null)
   }else {
     return null
   }

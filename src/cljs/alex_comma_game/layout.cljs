@@ -11,22 +11,46 @@
   (count game/categories)
   )
 
-(def window-size
+(defn- window-size []
   {:width (.-innerWidth js/window) :height (.-innerHeight js/window)}
   )
 
-(def category-width 300)
-
-(def center-of-window
-  { :x (quot (:width window-size) 2) :y (quot (:height window-size) 2) }
+(defn- using-window-size [f]
+  (let [sz (window-size)]
+    (f sz)
+    )
   )
 
-(def limiting-size
-  (min (:width window-size) (:height window-size))
+(defn- category-width []
+  (using-window-size (fn [sz]
+                       (quot (:width sz) 6)
+                       )
+   )
   )
 
-(def radius-of-circle
-  (quot (* limiting-size 3) 8)
+(defn- sentence-width []
+  (using-window-size (fn [sz]
+                       (quot (:width sz) 4)
+                       )
+                     )
+  )
+
+(defn- center-of-window []
+  (using-window-size (fn [sz]
+                       { :x (quot (:width sz) 2) :y (quot (:height sz) 2) }
+                       )
+                     )
+  )
+
+(defn- limiting-size []
+  (using-window-size (fn [sz]
+                       (min (:width sz) (:height sz))
+                       )
+                     )
+  )
+
+(defn- radius-of-circle []
+  (quot (* (limiting-size) 3) 8)
   )
 
 (defn- angle-of-category [n]
@@ -37,27 +61,23 @@
   (str v "px")
   )
 
-(defn- category-style [n]
+(defn- category-style [n cat-dom]
   (let [angle (angle-of-category n)
         sin (Math/sin angle)
         cos (Math/cos angle)
-        x-offset (int (* sin radius-of-circle))
-        y-offset (int (* cos radius-of-circle))
-        x (- (+ (:x center-of-window) x-offset) (quot category-width 2))
-        y (+ (:y center-of-window) y-offset)
+        r (radius-of-circle)
+        center (center-of-window)
+        cat-width (category-width)
+        cat-height (.-offsetHeight cat-dom)
+        x-offset (int (* sin r))
+        y-offset (int (* cos r))
+        x (- (+ (:x center) x-offset) (quot cat-width 2))
+        y (- (+ (:y center) y-offset) (quot cat-height 2))
         ]
     { :left (in-px x)
       :top (in-px y)
-      :width (in-px category-width)
-      :position "absolute"
+      :width (in-px cat-width)
       }
-    )
-  )
-
-(defn- update-size-status [evt]
-  (let [t (dom/by-id "first")
-        ]
-    (dom/set-text! t (str (:width window-size) " x " (:height window-size)))
     )
   )
 
@@ -66,7 +86,78 @@
   )
 
 (defn- category-div [n name]
-  (h/html [:div {:id (category-id n) :class "category"} name])
+  (h/html [:div {:id (category-id n) :class "category normal"} name])
+  )
+
+(def sentence-atom (atom (shuffle game/sentences)))
+
+(defn- current-sentence []
+  (first @sentence-atom)
+  )
+
+(defn- iterate-sentences []
+  (swap! sentence-atom rest)
+  )
+
+(defn- sentence-style [sen-div]
+  (let [center (center-of-window)
+        sen-width (sentence-width)
+        sen-height (.-offsetHeight sen-div)
+        x (- (:x center) (quot sen-width 2))
+        y (- (:y center) (quot sen-height 2))
+        ]
+    { :left (in-px x)
+      :top (in-px y)
+      :width (in-px sen-width)
+      }
+    )
+  )
+
+(defn- update-sentence []
+  (let [{:keys [text answer]} (current-sentence)
+        sen-div (dom/by-id "sentence")
+        ]
+    (dom/set-html! sen-div text)
+    (dom/set-data! sen-div :answer answer)
+    (dom/set-styles! sen-div (sentence-style sen-div))
+    )
+  )
+
+(defn- correct-answer? [cat-div]
+  (let [cat-answer (dom/get-data cat-div :answer)
+        sen-answer (dom/get-data (dom/by-id "sentence") :answer)
+        ]
+    (= cat-answer sen-answer)
+    )
+  )
+
+(defn- with-event-target [evt f]
+  (let [target (ev/current-target evt)]
+    (ev/stop-propagation evt)
+    (f target)
+    )
+  )
+
+(defn- category-mouse-over [evt]
+  (with-event-target evt #(dom/toggle-class! % "mouseover")
+    )
+  )
+
+(defn- category-mouse-out [evt]
+  (with-event-target evt #(dom/toggle-class! % "mouseover")
+    )
+  )
+
+(defn- category-click [evt]
+  (with-event-target evt #(dom/add-class! % "correct"))
+  )
+
+(def category-events
+  (list
+   {:event :mouseover :handler category-mouse-over}
+   {:event :mouseout  :handler category-mouse-out}
+   {:event :click     :handler category-click}
+   )
   )
 
 (defn ^:export init []
@@ -80,13 +171,17 @@
           ]
       (doseq [[n cat-div] cat-map]
         (dom/append! body cat-div)
-        (let [cat-style (category-style n)
-              cat-dom (dom/by-id (category-id n))
+        (let [cat-dom (dom/by-id (category-id n))
+              cat-style (category-style n cat-dom)
               ]
           (dom/set-styles! cat-dom cat-style)
+          (dom/set-data! cat-dom :answer n)
           )
         )
+      (doseq [{:keys [event handler]} category-events]
+        (ev/listen! (dom/by-class "category") event handler)
+        )
+      (update-sentence)
       )
     )
   )
-
