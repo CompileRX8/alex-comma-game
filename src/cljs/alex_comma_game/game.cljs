@@ -1,24 +1,26 @@
 (ns alex-comma-game.game
   )
 
+(def category '(:id :name))
 (def categories
-  {
-   1 "Brushstrokes"
-   2 "Rules 1, 2, 3"
-   3 "Rules 4, 5, 6"
-   4 "Rules 7, 8, 9"
-   5 "Lists"
-   6 "Oddballs"
-   }
+  (list
+   (zipmap category '(1 "Brushstrokes"))
+   (zipmap category '(2 "Rules 1, 2, 3"))
+   (zipmap category '(3 "Rules 4, 5, 6"))
+   (zipmap category '(4 "Rules 7, 8, 9"))
+   (zipmap category '(5 "Lists"))
+   (zipmap category '(6 "Oddballs"))
+   )
   )
 
+(def sentence '(:text :answer))
 (def sentences
-  [
-   {:text "Sentence 1 (3)" :answer 3}
-   {:text "Sentence 2 (6)" :answer 6}
-   {:text "Sentence 3 (2)" :answer 2}
-   {:text "Sentence 4 (1)" :answer 1}
-   {:text "Sentence 5 (4)" :answer 4}
-   {:text "Sentence 6 (5)" :answer 5}
-   ]
+  (list
+   (zipmap sentence '("Sentence 1 (3)" 3))
+   (zipmap sentence '("Sentence 2 (6)" 6))
+   (zipmap sentence '("Sentence 3 (2)" 2))
+   (zipmap sentence '("Sentence 4 (1)" 1))
+   (zipmap sentence '("Sentence 5 (4)" 4))
+   (zipmap sentence '("Sentence 6 (5)" 5))
+   )
   )
