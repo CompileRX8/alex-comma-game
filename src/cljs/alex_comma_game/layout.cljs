@@ -149,7 +149,24 @@
   )
 
 (defn- category-click [evt]
-  (with-event-target evt #(dom/add-class! % "correct"))
+  (with-event-target evt (fn [target]
+                           (let [class (if (correct-answer? target) "correct" "incorrect")
+                                 ]
+                             (dom/add-class! target class)
+                             )
+                           )
+    )
+  )
+
+(defn- next-sentence []
+  (dom/remove-class! (dom/by-class "category") "correct")
+  (dom/remove-class! (dom/by-class "category") "incorrect")
+  (iterate-sentences)
+  (update-sentence)
+  )
+
+(defn- sentence-click [evt]
+  (next-sentence)
   )
 
 (def category-events
@@ -182,6 +199,7 @@
         (ev/listen! (dom/by-class "category") event handler)
         )
       (update-sentence)
+      (ev/listen! (dom/by-id "sentence") :click sentence-click)
       )
     )
   )
