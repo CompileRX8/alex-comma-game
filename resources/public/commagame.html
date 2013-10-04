@@ -3,9 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Alexandra's Comma Game</title>
+      <style type="text/css">
+          body {
+              background-color: linen;
+          }
+          .category {
+              border: 5px solid darkblue;
+              border-radius: 8px;
+              padding: 5px;
+              text-align: center;
+              font: normal bold 14px sans-serif;
+              position: absolute;
+          }
+          #sentence {
+              color: black;
+              background-color: linen;
+              border: 5px solid black;
+              border-radius: 8px;
+              padding: 5px;
+              font: normal bold 14px sans-serif;
+              position: absolute;
+          }
+          .normal {
+              color: white;
+              background-color: blue;
+          }
+          .mouseover {
+              color: white;
+              background-color: dodgerblue;
+          }
+          .correct {
+              color: white;
+              background-color: green;
+          }
+          .incorrect {
+              color: white;
+              background-color: red;
+          }
+      </style>
   </head>
-  <body>
-    <script src="js/commagame.js"></script>
-    <script>alex_comma_game.init();</script>
+  <body onresize="alex_comma_game.layout.layout_page()">
+    <div id="sentence"></div>
+    <script src="js/commagame_dev.js"></script>
+    <script>alex_comma_game.layout.init();</script>
   </body>
 </html>

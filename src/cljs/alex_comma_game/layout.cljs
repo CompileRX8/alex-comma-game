@@ -69,8 +69,12 @@
         center (center-of-window)
         cat-width (category-width)
         cat-height (.-offsetHeight cat-dom)
-        x-offset (int (* sin r))
-        y-offset (int (* cos r))
+        sz (window-size)
+        lsz (limiting-size)
+        x-scale (/ (:width sz) lsz)
+        y-scale (/ (:height sz) lsz)
+        x-offset (int (* sin r x-scale))
+        y-offset (int (* cos r y-scale))
         x (- (+ (:x center) x-offset) (quot cat-width 2))
         y (- (+ (:y center) y-offset) (quot cat-height 2))
         ]
@@ -148,13 +152,23 @@
     )
   )
 
-(defn- category-click [evt]
-  (with-event-target evt (fn [target]
-                           (let [class (if (correct-answer? target) "correct" "incorrect")
-                                 ]
-                             (dom/add-class! target class)
-                             )
-                           )
+(def correct-count (atom 0))
+
+(defn- complete-game []
+  (ev/unlisten! (dom/by-class "category") :click)
+  (let [sen-count (count game/sentences)
+        passing-grade (inc (int (* sen-count 0.75)))
+        cnt @correct-count
+        bgcolor (if (> cnt passing-grade) "green" "red")
+        sen-div (dom/by-id "sentence")
+        score (str cnt " out of " sen-count " correct")
+        ]
+    (dom/set-styles! sen-div { :color "white"
+                               :background-color bgcolor
+                               :text-align "center"
+                              }
+                     )
+    (dom/set-html! sen-div score)
     )
   )
 
@@ -162,11 +176,23 @@
   (dom/remove-class! (dom/by-class "category") "correct")
   (dom/remove-class! (dom/by-class "category") "incorrect")
   (iterate-sentences)
-  (update-sentence)
+  (if (nil? (current-sentence))
+    (complete-game)
+    (update-sentence)
+    )
   )
 
-(defn- sentence-click [evt]
-  (next-sentence)
+(defn- category-click [evt]
+  (with-event-target evt (fn [target]
+                           (let [correct (correct-answer? target)
+                                 class (if correct "correct" "incorrect")
+                                 ]
+                             (if correct (swap! correct-count inc))
+                             (dom/add-class! target class)
+                             (js/setTimeout next-sentence 2000)
+                             )
+                           )
+    )
   )
 
 (def category-events
@@ -175,6 +201,17 @@
    {:event :mouseout  :handler category-mouse-out}
    {:event :click     :handler category-click}
    )
+  )
+
+(defn ^:export layout-page []
+  (doseq [cat-dom (dom/nodes (dom/by-class "category"))]
+    (let [n (dom/get-data cat-dom :answer)
+          cat-style (category-style n cat-dom)
+          ]
+      (dom/set-styles! cat-dom cat-style)
+      )
+    )
+  (update-sentence)
   )
 
 (defn ^:export init []
@@ -189,17 +226,14 @@
       (doseq [[n cat-div] cat-map]
         (dom/append! body cat-div)
         (let [cat-dom (dom/by-id (category-id n))
-              cat-style (category-style n cat-dom)
               ]
-          (dom/set-styles! cat-dom cat-style)
           (dom/set-data! cat-dom :answer n)
           )
         )
       (doseq [{:keys [event handler]} category-events]
         (ev/listen! (dom/by-class "category") event handler)
         )
-      (update-sentence)
-      (ev/listen! (dom/by-id "sentence") :click sentence-click)
       )
+    (layout-page)
     )
   )
